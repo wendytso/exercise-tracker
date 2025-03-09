@@ -1,0 +1,20 @@
+.exercise-time-tracker {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.time-display {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.time-box {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 5px;
+    text-align: center;
+}

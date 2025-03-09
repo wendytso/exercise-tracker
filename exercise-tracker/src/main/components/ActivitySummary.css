@@ -1,0 +1,27 @@
+.activity-summary {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.activity-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-summary li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 1.1rem;
+}
+
+.total-time {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.3rem;
+}

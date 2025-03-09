@@ -1,0 +1,159 @@
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ✅ Allows full-page scrolling */
+    align-items: center;
+    justify-content: space-between; /* ✅ Ensures content flows down naturally */
+    overflow-y: auto;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* ✅ Centers content vertically */
+    align-items: center; /* ✅ Centers content horizontally */
+    text-align: center; /* ✅ Centers text */
+    padding-bottom: 20px;
+}
+
+.exercise-option {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+  
+.exercise-option:hover {
+    transform: scale(1.05);
+}
+  
+.exercise-option.selected {
+    border: 2px solid #00aaff;
+    border-radius: 8px;
+}
+
+.selected-exercise {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+}
+
+.time-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* ✅ Ensures title text is centered */
+    margin-bottom: 20px;
+}
+.leaderboard-button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.leaderboard-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.leaderboard-button:hover {
+    background-color: #0056b3;
+}
+.action-buttons {
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 18px;
+    justify-content: center;
+    display: flex;
+    gap: 15px;
+}
+
+.reset-button, .confirm-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* ✅ Reset Button */
+.reset-button {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.reset-button:hover {
+    background-color: #d32f2f;
+}
+
+/* ✅ Confirm Time Button */
+.confirm-button {
+    background-color: #4caf50; /* Green */
+    color: white;
+}
+
+.confirm-button:hover {
+    background-color: #388e3c;
+}
+
+.success-message {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4caf50; /* ✅ Green color for success */
+    text-align: center;
+    background-color: rgba(76, 175, 80, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.chatbot-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #f39c12;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.chatbot-button:hover {
+    background-color: #e67e22;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
