@@ -6,7 +6,7 @@ function Header() {
         <h1>My App</h1>
         <nav>
           <a href="#">Home</a>
-          <a href="#">Features</a>
+          <a href="/leaderboard">LeaderBoard</a>
           <a href="#">Contact</a>
         </nav>
       </header>
