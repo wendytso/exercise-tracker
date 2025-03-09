@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
+.contact-page-container {
+  display: flex;
+  font-family: "Dongle", sans-serif;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #5cbdb9;
+  padding: 1.5rem;
+}
+
+.contact-us-title {
+    font-size: 40px;
+}
+
+/* Form container with white background and shadow */
+.contact-form-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 32rem;
+}
+
+/* Title styling */
+.contact-form-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-align: center;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+/* Styling for the input fields and textarea */
+.contact-input,
+.contact-textarea {
+  width: 90%;
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-family: "Dongle", sans-serif;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Styling for the submit button */
+.contact-submit-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #87CEEB;
+  color: white;
+  border-radius: 0.375rem;
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-submit-button:hover {
+  background-color: #6495ED;
+  transform: scale(1.05);
+}
+
+/* For textarea */
+.contact-textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+/* Tailwind's flex styles for the layout */
+.contact-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Equivalent to space-y-4 in Tailwind */
+}

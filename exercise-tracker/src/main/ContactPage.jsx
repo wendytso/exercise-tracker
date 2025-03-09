@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./ContactPage.css";
 
 function ContactPage() {
   const [name, setName] = useState("");
@@ -14,8 +15,8 @@ function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
+    <div className="contact-page-container">
+      <h1 className="contact-us-title">Have questions? Contact Us!</h1>
 
       <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
         {/* Name Input */}
@@ -24,7 +25,7 @@ function ContactPage() {
           placeholder="Your Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-md"
+          className="contact-input"
         />
 
         {/* Email Input */}
@@ -33,7 +34,7 @@ function ContactPage() {
           placeholder="Your Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-md"
+          className="contact-input"
         />
 
         {/* Message Textarea */}
@@ -41,14 +42,14 @@ function ContactPage() {
           placeholder="Your Message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-md"
+          className="contact-textarea"
           rows="5"
         ></textarea>
 
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          className="contact-submit-button"
         >
           Send Message
         </button>
