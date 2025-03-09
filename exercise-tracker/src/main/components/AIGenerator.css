@@ -1,0 +1,47 @@
+.ai-container {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.ai-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.ai-button:hover {
+    background-color: #45a049;
+}
+
+.ai-button:active {
+    transform: scale(0.98);
+    background-color: #3e8341;
+}
+
+.ai-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.ai-input {
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #4caf50;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
