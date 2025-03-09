@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaUser, FaLock } from "react-icons/fa";
+import {
+  FaUser,
+  FaLock,
+  FaGoogle,
+  FaFacebook,
+  FaInstagram,
+} from "react-icons/fa";
+import exerciseGif from "../assets/exercise.gif";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -28,9 +35,14 @@ const LoginPage = () => {
       >
         Exercise Tracker Login
       </h1>
-
+      <img
+        src={exerciseGif}
+        alt="Exercise GIF"
+        style={{ width: "10rem", height: "10rem" }}
+        className="mb-6"
+      />
       {/* Username Input */}
-      <div className="relative w-72 mb-4">
+      <div className="relative w-72 mb-6">
         <input
           type="text"
           placeholder="Username"
@@ -43,7 +55,7 @@ const LoginPage = () => {
       </div>
 
       {/* Password Input */}
-      <div className="relative w-72 mb-4">
+      <div className="relative w-72 mb-6">
         <input
           type="password"
           placeholder="Password"
@@ -75,6 +87,17 @@ const LoginPage = () => {
         >
           Forgot Password?
         </a>
+      </div>
+      <div className="flex space-x-4 mb-10">
+        <button className="p-10 bg-white border rounded-full hover:bg-gray-200">
+          <FaGoogle className="text-red-500 text-2xl" />
+        </button>
+        <button className="p-10 bg-white border rounded-full hover:bg-gray-200">
+          <FaFacebook className="text-blue-600 text-2xl" />
+        </button>
+        <button className="p-10 bg-white border rounded-full hover:bg-gray-200">
+          <FaInstagram className="text-pink-500 text-2xl" />
+        </button>
       </div>
 
       <button
