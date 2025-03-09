@@ -3,59 +3,56 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Button from "./components/Button";
 import Footer from "./components/Footer";
-import swimImage from "../assets/swimming.svg";
 import AIGenerator from "./components/AIGenerator";
+import Carousel from "./components/Carousel";
+
+import swimImage from "../assets/swimming-boys.png";
+import runImage from "../assets/running-girl.png";
+import skiImage from "../assets/skiing-girl.png";
+import snowboardingImage from "../assets/snowboarding-girl.png";
+import tennisImage from "../assets/tennis-boy.png";
 
 function MainPage() {
+  const exercises = [ // add more exercises here later
+    { name: "Swimming", image: swimImage },
+    { name: "Running", image: runImage }, 
+    { name: "Skiing", image: skiImage },
+    { name: "Snowboarding", image: snowboardingImage },
+    { name: "Tennis", image: tennisImage },
+  ];
 
-    const exercises = [
-        { name: "Swimming", image: swimImage},
-        //{ name: "Running", image: runImage},
-    ];
+  const [selectedExercise, setSelectedExercise] = useState(exercises[0]);
 
-    const [selectedExcercise, setChoosenExercise] = useState(null);
-
-    const buttonLabels = ["15 min", "30 min", "45 min", "60 min"];
+  const buttonLabels = ["15 min", "30 min", "45 min", "60 min"];
 
   return (
     <div className="main-container">
         <AIGenerator />
-        <Header />
-        <div className="title">
-            <h1>Choose your exercise: </h1>
+=======
+      <Header />
 
-            {/* Exercise Options */}
-            <div className="exercise-options">
-                {exercises.map((exercise, index) => (
-                    <img
-                        key={index}
-                        src={exercise.image}
-                        alt={exercise.name}
-                        onClick={() => setChoosenExercise(exercise)}
-                    />
-                ))}
-            </div>
+      <div className="title">
+        <h1>Choose your exercise:</h1>
 
-            {/* Exercise Selection */}
-            {selectedExcercise && (            
-            <div className="exercise-name">
-                <h2>{selectedExcercise.name}</h2>
-                <img
-                src={selectedExcercise.image}
-                alt={selectedExcercise.name}
-                className="selected-image"
-                />
-            </div>
-            )}
+        <Carousel
+          exercises={exercises}
+          onExerciseSelect={setSelectedExercise}
+        />
 
-        {/* Time Accumulation Buttons */}
-        <div className="timebuttons">
-            {buttonLabels.map((label, index) => (
-                <Button key={index} text={label} />
-            ))}
-      <Footer />
+        {selectedExercise && (
+          <div className="selected-exercise">
+            Selected exercise: {selectedExercise.name}
+          </div>
+        )}
+
+        <div className="time-buttons">
+          {buttonLabels.map((label) => (
+            <Button key={label} text={label} />
+          ))}
         </div>
-    </div>
+      </div>
+
+      <Footer />
     </div>
   );
 }

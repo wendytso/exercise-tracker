@@ -1,58 +1,20 @@
-body {
-    margin: 0;
-    padding-top: 90px;
-    overflow-x: hidden;
-}
-
-.main-container {
-    text-align: center;
-    padding: 20px;
-}
-
-/* ✅ Styles for the content area */
-.content {
-    margin-top: 100px; /* Push down to avoid header overlap */
-    display: flex;
-    justify-content: space-between; /* ✅ Separates text and buttons */
-    align-items: center;
-    width: 80%;
-    margin: auto;
-}
-
-/* ✅ Style for the main text */
-h1 {
-    font-size: 32px;
-    font-weight: bold;
-    color: white;
-    text-align: left;
-}
-
-p {
-    font-size: 18px;
-    color: lightgray;
-    text-align: left;
-}
-
-/* ✅ Aligns buttons on the right */
-.side-buttons {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: flex-end; /* Align to the right */
-    gap: 25px;
-}
-
-/* ✅ Style for the buttons */
-.main-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #00d8ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.exercise-option {
     cursor: pointer;
-    width: 150px;
-}
-
-.main-button:hover {
-    background-color: #007acc;
-}
+    transition: transform 0.2s;
+  }
+  
+  .exercise-option:hover {
+    transform: scale(1.05);
+  }
+  
+  .exercise-option.selected {
+    border: 2px solid #00aaff;
+    border-radius: 8px;
+  }
+  .selected-exercise {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+  }
+  
