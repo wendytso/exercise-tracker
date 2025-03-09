@@ -8,6 +8,7 @@ function ActivitySummary({ exerciseTimes }) {
   return (
     <div className="activity-summary">
       <h2>Your Activity Summary</h2>
+      <h3 className="total-time">Total Active Time: {totalTime} minutes</h3>
       <ul>
         {Object.entries(exerciseTimes).map(([exercise, time]) => (
           <li key={exercise}>
@@ -16,7 +17,6 @@ function ActivitySummary({ exerciseTimes }) {
           </li>
         ))}
       </ul>
-      <h3 className="total-time">Total Activity Time: {totalTime} minutes</h3>
     </div>
   );
 }

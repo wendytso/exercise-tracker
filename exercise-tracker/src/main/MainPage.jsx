@@ -1,6 +1,5 @@
 import "./MainPage.css";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect} from "react";
 import Header from "./components/Header";
 import Button from "./components/Button";
 import Footer from "./components/Footer";
@@ -16,6 +15,7 @@ import tennisImage from "../assets/tennis-boy.png";
 import golfImage from "../assets/golf-man.png";
 import badmintonImage from "../assets/badminton-children.png";
 import basketballImage from "../assets/basketball-girls.png";
+import { useNavigate } from "react-router-dom";
 
 function MainPage() {
   const exercises = [
@@ -30,60 +30,82 @@ function MainPage() {
   ];
 
   const [selectedExercise, setSelectedExercise] = useState(exercises[0]);
-  const [exerciseTimes, setExerciseTimes] = useState({});
+  const [exerciseTimes, setExerciseTimes] = useState(
+    JSON.parse(localStorage.getItem("exerciseTimes")) || {}
+  );
+  const [tempExerciseTimes, setTempExerciseTimes] = useState({});
+  const [successMessage, setSuccessMessage] = useState(""); // ✅ New state for success message
+
+  useEffect(() => {
+    localStorage.setItem("exerciseTimes", JSON.stringify(exerciseTimes));
+  }, [exerciseTimes]);
 
   const buttonLabels = [15, 30, 45, 60];
 
   const handleAddTime = (minutes) => {
-    setExerciseTimes((prevTimes) => ({
+    setTempExerciseTimes((prevTimes) => ({
       ...prevTimes,
-      [selectedExercise.name]:
-        (prevTimes[selectedExercise.name] || 0) + minutes,
+      [selectedExercise.name]: (prevTimes[selectedExercise.name] || 0) + minutes,
     }));
+    setSuccessMessage(""); // ✅ Clear success message when adding new time
   };
 
-  const navigate = useNavigate(); // ✅ Initialize navigation
+  const handleConfirmTime = () => {
+    const addedMinutes = Object.values(tempExerciseTimes).reduce((acc, time) => acc + time, 0); // ✅ Get total added time
+    setExerciseTimes((prevTimes) => {
+      const updatedTimes = {
+        ...prevTimes,
+        ...tempExerciseTimes,
+      };
+      localStorage.setItem("exerciseTimes", JSON.stringify(updatedTimes));
+      return updatedTimes;
+    });
 
-  const goToLeaderboard = () => {
-    navigate("/leaderboard", { state: { exerciseTimes } }); // ✅ Pass exerciseTimes
+    setSuccessMessage(`Successfully added ${addedMinutes} minutes to profile!`); // ✅ Show success message
+    setTempExerciseTimes({});
   };
+
+  const handleReset = () => {
+    setTempExerciseTimes({});
+    setSuccessMessage(""); // ✅ Clear success message when resetting
+  };
+
+  const navigate = useNavigate();
 
   return (
     <div className="main-container">
       <Header />
-      {/* ✅ "Go to Leaderboard" Button */}
-      <div className="leaderboard-button-container">
-        <button onClick={goToLeaderboard} className="leaderboard-button">
-          View Leaderboard
-        </button>
-      </div>
 
       <div className="content">
+      {successMessage && <div className="success-message">{successMessage}</div>}
+
         <div className="title">
           <h1>What exercise are you doing today?</h1>
 
-          <Carousel
-            exercises={exercises}
-            onExerciseSelect={setSelectedExercise}
-          />
+          <Carousel exercises={exercises} onExerciseSelect={setSelectedExercise} />
 
           <div className="time-buttons">
             {buttonLabels.map((minutes) => (
-              <Button
-                key={minutes}
-                text={`${minutes} minutes`}
-                onClick={() => handleAddTime(minutes)}
-              />
+              <Button key={minutes} text={`${minutes} minutes`} onClick={() => handleAddTime(minutes)} />
             ))}
           </div>
 
-          <ExerciseTimeTracker
-            selectedExercise={selectedExercise}
-            exerciseTimes={exerciseTimes}
-          />
-        </div>
+          <ExerciseTimeTracker selectedExercise={selectedExercise} exerciseTimes={tempExerciseTimes} />
 
-        <AIGenerator />
+          {/* ✅ Success Message Section */}
+
+          <div className="action-buttons">
+            <button className="reset-button" onClick={handleReset}>
+              Reset
+            </button>
+            <button className="confirm-button" onClick={handleConfirmTime}>
+              Add Time
+            </button>
+          </div>
+          <button className="chatbot-button" onClick={() => navigate("/chatbot")}>
+            Need Help? Ask Our Bot for Advice!
+          </button>
+        </div>
       </div>
 
       <Footer />

@@ -4,6 +4,7 @@ import MainPage from "./main/MainPage";
 import LoginPage from "./login/LoginPage";
 import LeaderboardPage from "./main/LeaderboardPage";
 import ContactPage from "./main/ContactPage";
+import ChatbotPage from "./main/ChatbotPage"; // ✅ Import the new Chatbot page
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/main" element={<MainPage />} />
         <Route path="/leaderboard" element={<LeaderboardPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/chatbot" element={<ChatbotPage />} /> {/* ✅ New Route */}
       </Routes>
     </BrowserRouter>
   );

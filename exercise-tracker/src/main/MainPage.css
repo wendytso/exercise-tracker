@@ -74,4 +74,86 @@
 .leaderboard-button:hover {
     background-color: #0056b3;
 }
+.action-buttons {
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 18px;
+    justify-content: center;
+    display: flex;
+    gap: 15px;
+}
+
+.reset-button, .confirm-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* ✅ Reset Button */
+.reset-button {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.reset-button:hover {
+    background-color: #d32f2f;
+}
+
+/* ✅ Confirm Time Button */
+.confirm-button {
+    background-color: #4caf50; /* Green */
+    color: white;
+}
+
+.confirm-button:hover {
+    background-color: #388e3c;
+}
+
+.success-message {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4caf50; /* ✅ Green color for success */
+    text-align: center;
+    background-color: rgba(76, 175, 80, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.chatbot-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #f39c12;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.chatbot-button:hover {
+    background-color: #e67e22;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
