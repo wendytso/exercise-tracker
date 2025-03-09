@@ -26,7 +26,7 @@ const LoginPage = () => {
 
   return (
     <div className="login-container">
-      <h1 className="login-header">Exercise Tracker Login</h1>
+      <h1 className="login-header">Enduro Login</h1>
       <img src={exerciseGif} alt="Exercise GIF" className="login-gif" />
 
       {/* Username Input */}
