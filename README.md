@@ -12,7 +12,7 @@ Given these concerns, we were inspired to create a health and fitness applicatio
 2) Improve overall user participation in physical activity through various activities of their choosing, 
 3) Foster an online community between users and their friends to compete and positively encourage each other to exercise!
 
-Hence, let us introduce <Enduro> - a web-based application that allows users to build up their fitness habits through 15, 30, 45 and one-hour increments, blending together AI-generated responses on creative ways on how to make physical activity fun and motivating.
+Hence, let us introduce Enduro - a web-based application that allows users to build up their fitness habits through 15, 30, 45 and one-hour increments, blending together AI-generated responses on creative ways on how to make physical activity fun and motivating.
 
 <br>
 
@@ -28,7 +28,7 @@ The leaderboard feature aims to help users stay motivated by assessing their pro
 
 ## 👥 How we built it 
 
-<Enduro> was built using React, a component-based library. React was our primary choice, due to its dynamic capabilities of handling design, styling and easy rendering of components. We also preferred using React due to its capabilities of faster development with live updates through React's local server.
+Enduro was built using React, a component-based library. React was our primary choice, due to its dynamic capabilities of handling design, styling and easy rendering of components. We also preferred using React due to its capabilities of faster development with live updates through React's local server.
 
 We also used CSS to incorporate aesthetics into our project.
 
