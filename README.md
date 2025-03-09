@@ -18,7 +18,7 @@ Hence, let us introduce <Enduro> - a web-based application that allows users to 
 
 ## 💻 What it does
 
-<Enduro> was built using React, CSS, and JavaScript. The application allows users to select from various physical activities, including long-distance running, basketball, skiing, and more. As consistent engagement in physical activity requires patience, diligence and continued efforts, we offer users the opportunity to engage in activities of their choice in 15, 30, 45 and 1-hour increments.
+Enduro was built using React, CSS, and JavaScript. The application allows users to select from various physical activities, including long-distance running, basketball, skiing, and more. As consistent engagement in physical activity requires patience, diligence and continued efforts, we offer users the opportunity to engage in activities of their choice in 15, 30, 45 and 1-hour increments.
 
 It allows users to track their accumulated progress, engaging with their community in a friendly, positive competition.
 
