@@ -12,6 +12,9 @@ import runImage from "../assets/running-girl.png";
 import skiImage from "../assets/skiing-girl.png";
 import snowboardingImage from "../assets/snowboarding-girl.png";
 import tennisImage from "../assets/tennis-boy.png";
+import golfImage from "../assets/golf-man.png";
+import badmintonImage from "../assets/badminton-children.png";
+import basketballImage from "../assets/basketball-girls.png";
 
 function MainPage() {
   const exercises = [
@@ -21,6 +24,9 @@ function MainPage() {
     { name: "Skiing", image: skiImage },
     { name: "Snowboarding", image: snowboardingImage },
     { name: "Tennis", image: tennisImage },
+    { name: "Golfing", image: golfImage },
+    { name: "Badminton", image: badmintonImage },
+    { name: "Basketball", image: basketballImage },
   ];
 
   const [selectedExercise, setSelectedExercise] = useState(exercises[0]); //tracks which exercise we are on
@@ -38,12 +44,10 @@ function MainPage() {
 
   return (
     <div className="main-container">
-      <AIGenerator />
-      
       <Header />
 
       <div className="title">
-        <h1>Choose your exercise:</h1>
+        <h1>What exercise are you doing today?</h1>
 
         <Carousel
           exercises={exercises}
@@ -56,7 +60,7 @@ function MainPage() {
           </div>
         )} */}
 
-<div className="time-buttons">
+        <div className="time-buttons">
           {buttonLabels.map((minutes) => (
             <Button
               key={minutes}
@@ -67,11 +71,11 @@ function MainPage() {
         </div>
 
         <ExerciseTimeTracker
-        selectedExercise={selectedExercise}
-        exerciseTimes={exerciseTimes}
+          selectedExercise={selectedExercise}
+          exerciseTimes={exerciseTimes}
         />
-        </div>
-
+      </div>
+      <AIGenerator />
       <Footer />
     </div>
   );
