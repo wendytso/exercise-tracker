@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
 body {
     margin: 0;
     padding-top: 90px;
     overflow-x: hidden;
+    font-family: "Dongle", sans-serif;
+    font-size: 30px;
+    background-color: #5cbdb9;
 }
 
 .main-container {

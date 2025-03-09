@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
 .leaderboard {
-    background-color: #222;
+    background-color: #A1D6B2;
+    font-family: "Dongle", sans-serif;
     padding: 20px;
     border-radius: 8px;
     width: 400px;
+    color: #36454F;
     color: white;
     text-align: center;
+    font-size: 30px;
 }
 
 .leaderboard ol {
@@ -22,5 +27,5 @@
 
 .leaderboard .highlight {
     font-weight: bold;
-    color: #00d8ff;
+    color: #FF6F61;
 }
