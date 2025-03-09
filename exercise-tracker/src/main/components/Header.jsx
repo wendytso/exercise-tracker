@@ -5,7 +5,7 @@ function Header() {
     <header className="header">
       <h1 className="header-title">Enduro</h1>
       <nav className="header-nav">
-        <a href="/">Home</a>
+        <a href="/main">Home</a>
         <a href="/leaderboard">LeaderBoard</a>
         <a href="/chatbot">ChatBot</a>
         <a href="/contact">Contact</a>
