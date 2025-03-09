@@ -56,3 +56,23 @@ p {
 .main-button:hover {
     background-color: #007acc;
 }
+.leaderboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding-bottom: 20px;
+}
+
+.leaderboard-title {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.leaderboard-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ccc;
+}

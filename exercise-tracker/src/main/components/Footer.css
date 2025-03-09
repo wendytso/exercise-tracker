@@ -1,10 +1,25 @@
-.footer {
+footer {
     background-color: #222;
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
-    bottom: 0;
     width: 100%;
-  }
-  
+    margin-top: auto; /* ✅ Ensures footer stays at bottom of page */
+}
+
+/* ✅ Ensures the page fills the full screen */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ✅ Ensures full-page height */
+}
+
+.content {
+    flex: 1; /* ✅ Pushes footer to the bottom */
+}

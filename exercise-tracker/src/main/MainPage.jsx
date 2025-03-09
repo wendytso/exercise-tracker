@@ -1,5 +1,6 @@
 import "./MainPage.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./components/Header";
 import Button from "./components/Button";
 import Footer from "./components/Footer";
@@ -18,7 +19,6 @@ import basketballImage from "../assets/basketball-girls.png";
 
 function MainPage() {
   const exercises = [
-    // add more exercises here later
     { name: "Swimming", image: swimImage },
     { name: "Running", image: runImage },
     { name: "Skiing", image: skiImage },
@@ -29,7 +29,7 @@ function MainPage() {
     { name: "Basketball", image: basketballImage },
   ];
 
-  const [selectedExercise, setSelectedExercise] = useState(exercises[0]); //tracks which exercise we are on
+  const [selectedExercise, setSelectedExercise] = useState(exercises[0]);
   const [exerciseTimes, setExerciseTimes] = useState({});
 
   const buttonLabels = [15, 30, 45, 60];
@@ -42,40 +42,50 @@ function MainPage() {
     }));
   };
 
+  const navigate = useNavigate(); // ✅ Initialize navigation
+
+  const goToLeaderboard = () => {
+    navigate("/leaderboard", { state: { exerciseTimes } }); // ✅ Pass exerciseTimes
+  };
+
   return (
     <div className="main-container">
       <Header />
+      {/* ✅ "Go to Leaderboard" Button */}
+      <div className="leaderboard-button-container">
+        <button onClick={goToLeaderboard} className="leaderboard-button">
+          View Leaderboard
+        </button>
+      </div>
 
-      <div className="title">
-        <h1>What exercise are you doing today?</h1>
+      <div className="content">
+        <div className="title">
+          <h1>What exercise are you doing today?</h1>
 
-        <Carousel
-          exercises={exercises}
-          onExerciseSelect={setSelectedExercise}
-        />
+          <Carousel
+            exercises={exercises}
+            onExerciseSelect={setSelectedExercise}
+          />
 
-        {/* {selectedExercise && (
-          <div className="selected-exercise">
-            Selected exercise: {selectedExercise.name}
+          <div className="time-buttons">
+            {buttonLabels.map((minutes) => (
+              <Button
+                key={minutes}
+                text={`${minutes} minutes`}
+                onClick={() => handleAddTime(minutes)}
+              />
+            ))}
           </div>
-        )} */}
 
-        <div className="time-buttons">
-          {buttonLabels.map((minutes) => (
-            <Button
-              key={minutes}
-              text={`${minutes} minutes`}
-              onClick={() => handleAddTime(minutes)}
-            />
-          ))}
+          <ExerciseTimeTracker
+            selectedExercise={selectedExercise}
+            exerciseTimes={exerciseTimes}
+          />
         </div>
 
-        <ExerciseTimeTracker
-          selectedExercise={selectedExercise}
-          exerciseTimes={exerciseTimes}
-        />
+        <AIGenerator />
       </div>
-      <AIGenerator />
+
       <Footer />
     </div>
   );
