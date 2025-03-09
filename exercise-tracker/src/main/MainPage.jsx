@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Button from "./components/Button";
 import Footer from "./components/Footer";
 import swimImage from "../assets/swimming.svg";
+import AIGenerator from "./components/AIGenerator";
 
 function MainPage() {
 
@@ -18,6 +19,7 @@ function MainPage() {
 
   return (
     <div className="main-container">
+        <AIGenerator />
         <Header />
         <div className="title">
             <h1>Choose your exercise: </h1>
