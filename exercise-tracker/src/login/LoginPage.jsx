@@ -8,6 +8,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import exerciseGif from "../assets/exercise.gif";
+import "./loginpage.css";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -24,54 +25,36 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-      <style>
-        {`@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');`}
-      </style>
+    <div className="login-container">
+      <h1 className="login-header">Exercise Tracker Login</h1>
+      <img src={exerciseGif} alt="Exercise GIF" className="login-gif" />
 
-      <h1
-        className="text-4xl font-bold mb-6 text-blue-600"
-        style={{ fontFamily: "Dongle, sans-serif" }}
-      >
-        Exercise Tracker Login
-      </h1>
-      <img
-        src={exerciseGif}
-        alt="Exercise GIF"
-        style={{ width: "10rem", height: "10rem" }}
-        className="mb-6"
-      />
       {/* Username Input */}
-      <div className="relative w-72 mb-6">
+      <div className="input-container">
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full p-3 pl-4 pr-10 border border-gray-300 rounded-md focus:outline-blue-500"
-          style={{ fontFamily: "Dongle, sans-serif", fontSize: "22px" }}
+          className="input-field"
         />
-        <FaUser className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+        <FaUser className="input-icon" />
       </div>
 
       {/* Password Input */}
-      <div className="relative w-72 mb-6">
+      <div className="input-container">
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full p-3 pl-4 pr-10 border border-gray-300 rounded-md focus:outline-blue-500"
-          style={{ fontFamily: "Dongle, sans-serif", fontSize: "22px" }}
+          className="input-field"
         />
-        <FaLock className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+        <FaLock className="input-icon" />
       </div>
 
       <div className="flex justify-between items-center w-72 mb-6">
-        <label
-          className="flex items-center text-gray-600"
-          style={{ fontFamily: "Dongle, sans-serif", fontSize: "22px" }}
-        >
+        <label className="checkbox-label">
           <input
             type="checkbox"
             checked={rememberMe}
@@ -80,31 +63,35 @@ const LoginPage = () => {
           />
           Remember Me
         </label>
-        <a
-          href="#"
-          className="text-blue-500 hover:underline"
-          style={{ fontFamily: "Dongle, sans-serif", fontSize: "22px" }}
-        >
+        <a href="#" className="forgot-password">
           Forgot Password?
         </a>
       </div>
-      <div className="flex space-x-4 mb-10">
-        <button className="p-10 bg-white border rounded-full hover:bg-gray-200">
-          <FaGoogle className="text-red-500 text-2xl" />
+
+      {/* Social Buttons */}
+      <div className="flex justify-center mb-10">
+        <button
+          className="bg-red-500 text-white border rounded-full hover:bg-red-600"
+          style={{ padding: "1rem", marginRight: "1rem" }}
+        >
+          <FaGoogle className="text-2xl" />
         </button>
-        <button className="p-10 bg-white border rounded-full hover:bg-gray-200">
-          <FaFacebook className="text-blue-600 text-2xl" />
+        <button
+          className="bg-blue-600 text-white border rounded-full hover:bg-blue-700"
+          style={{ padding: "1rem", marginRight: "1rem" }}
+        >
+          <FaFacebook className="text-2xl" />
         </button>
-        <button className="p-10 bg-white border rounded-full hover:bg-gray-200">
-          <FaInstagram className="text-pink-500 text-2xl" />
+        <button
+          className="bg-pink-500 text-white border rounded-full hover:bg-pink-600"
+          style={{ padding: "1rem" }}
+        >
+          <FaInstagram className="text-2xl" />
         </button>
       </div>
 
-      <button
-        onClick={handleLogin}
-        className="w-72 bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition duration-200"
-        style={{ fontFamily: "Dongle, sans-serif", fontSize: "22px" }}
-      >
+      {/* Login Button */}
+      <button onClick={handleLogin} className="login-button">
         Next
       </button>
     </div>
