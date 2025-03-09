@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ContactPage.css";
+import Header from "./components/Header";
 
 function ContactPage() {
   const [name, setName] = useState("");
@@ -16,6 +17,7 @@ function ContactPage() {
 
   return (
     <div className="contact-page-container">
+      <Header />
       <h1 className="contact-us-title">Have questions? Contact Us!</h1>
 
       <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
@@ -47,10 +49,7 @@ function ContactPage() {
         ></textarea>
 
         {/* Submit Button */}
-        <button
-          type="submit"
-          className="contact-submit-button"
-        >
+        <button type="submit" className="contact-submit-button">
           Send Message
         </button>
       </form>
