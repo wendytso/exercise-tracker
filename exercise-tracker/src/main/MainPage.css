@@ -1,0 +1,52 @@
+.main-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* ✅ Styles for the content area */
+.content {
+    margin-top: 100px; /* Push down to avoid header overlap */
+    display: flex;
+    justify-content: space-between; /* ✅ Separates text and buttons */
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+/* ✅ Style for the main text */
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+}
+
+p {
+    font-size: 18px;
+    color: lightgray;
+    text-align: left;
+}
+
+/* ✅ Aligns buttons on the right */
+.side-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-end; /* Align to the right */
+    gap: 25px;
+}
+
+/* ✅ Style for the buttons */
+.main-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00d8ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.main-button:hover {
+    background-color: #007acc;
+}
